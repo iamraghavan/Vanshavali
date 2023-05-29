@@ -184,7 +184,7 @@ form.addEventListener('submit', function(event) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.error('Login error:', errorCode, errorMessage);
-      alert('Login failed: ' + errorMessage);
+      swal('Login failed: ' + errorMessage);
     });
 });
 

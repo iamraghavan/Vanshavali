@@ -29,6 +29,9 @@
     <!-- Colors Css -->
     <link id="color-switcher" type="text/css" rel="stylesheet" href="#" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
@@ -188,7 +191,7 @@ form.addEventListener('submit', function(event) {
       // Registration successful
       var user = userCredential.user;
       console.log('Registered user:', user);
-      alert('Registration successful!');
+      swal('Registration successful!');
       // You can redirect the user to another page here if needed
     })
     .catch(function(error) {
@@ -196,7 +199,7 @@ form.addEventListener('submit', function(event) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.error('Registration error:', errorCode, errorMessage);
-      alert('Registration failed: ' + errorMessage);
+      swal('Registration failed: ' + errorMessage);
     });
 });
 
