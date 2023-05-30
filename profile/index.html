@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="./vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/app.css">
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+	 <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("tree1.html"); 
+    });
+    </script> 
 </head>  <style>
     @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
@@ -154,42 +160,8 @@
                 </nav>
             </header>
             <div id="main-content">
-
-                <div class="page-heading">
-                    <div class="page-title">
-                        <div class="row">
-                            <div class="col-12 col-md-6 order-md-1 order-last">
-                                <!-- <img width="200px" src="../assets/img/logo.png" alt="" srcset=""> -->
-                                
-                            </div>
-                           
-                            <!-- <div class="col-12 col-md-6 order-md-2 order-first">
-                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Layout Vertical Navbar
-                                        </li>
-                                    </ol>
-                                </nav>
-                            </div> -->
-                        </div>
-                    </div>
-                    <section class="section">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Trace, Connect, Collaborate</h4>
-                            </div>
-
-                            <div id="chart-container"></div>
-
-
-                            <div class="card-body">
-                                Vanshavali is the perfect tool to help you uncover the secrets of your family tree. We make it easier to explore and collect data, helping you go through records to quickly gain insights of your family.
-
-                            </div>
-                        </div>
-                    </section>
-                </div>
+<iframe src="tree1.html" height="700px" width ="100%"></iframe>
+               
 <!--                 
         <button onclick="swalelement">submit</button>
 
