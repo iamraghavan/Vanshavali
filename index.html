@@ -78,6 +78,7 @@
 
   </script>
 
+<<<<<<< HEAD
   <script>
     // Get a reference to the currently logged in user
     var user = firebase.auth().currentUser;
@@ -90,6 +91,20 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jwt-decode@2.2.0/build/jwt-decode.min.js"></script>
   <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+=======
+<script>
+  // Get a reference to the currently logged in user
+  var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in
+    var profileDiv = document.getElementById('profile');
+    profileDiv.innerHTML = 'Welcome, ' + user.email + '! <a href="dashboard.html">Go to Dashboard</a>';
+  }
+</script>
+ <script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@2.2.0/build/jwt-decode.min.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+>>>>>>> e3240ea12f1ddcd2731454b08a2e90b1f0e2a6f1
 
 
 
@@ -106,7 +121,11 @@
 
   <!-- ==================== End Loading ==================== -->
 
+<<<<<<< HEAD
   <!-- <div id="g_id_onload" data-client_id="296534124626-7lpa6e1b9jqdgcr0h7pbej1u1032tm65.apps.googleusercontent.com"
+=======
+<!-- <div id="g_id_onload" data-client_id="296534124626-7lpa6e1b9jqdgcr0h7pbej1u1032tm65.apps.googleusercontent.com"
+>>>>>>> e3240ea12f1ddcd2731454b08a2e90b1f0e2a6f1
     data-login_uri="" data-callback="handleCredentialResponse" data-context="use">
 </div> -->
 
@@ -198,9 +217,15 @@
                 <div class="col-lg-7 col-md-9">
                   <div class="caption center">
                     <h1 data-splitting="" class="header-logo-text">Find your <br> roots. </h1>
+<<<<<<< HEAD
                     <p>Discover the past and inspire the present.
                       Trace your ancestral roots, collaborate with family menbers, and find your story.
                     </p>
+=======
+                    <p>Discover the past and inspire the present. 
+                      Trace your ancestral roots, collaborate with family menbers, and find your story.
+                      </p>
+>>>>>>> e3240ea12f1ddcd2731454b08a2e90b1f0e2a6f1
                     <a href="./oauth/index.html" class="btn-curve btn-lit mt-30">
                       <span>Learn More</span>
                     </a>
@@ -216,7 +241,11 @@
               <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-9">
                   <div class="caption center">
+<<<<<<< HEAD
                     <h1 data-splitting="" class="header-logo-text">Trace, Connect, <br> Collaborate </h1>
+=======
+                    <h1 data-splitting="" class="header-logo-text">Trace, Connect, <br>  Collaborate </h1>
+>>>>>>> e3240ea12f1ddcd2731454b08a2e90b1f0e2a6f1
                     <p>Unlock the mysteries of family ancestry.</p>
                     <a href="./oauth/index.html" class="btn-curve btn-lit mt-30">
                       <span>Learn More</span>
@@ -234,8 +263,12 @@
                 <div class="col-lg-7 col-md-9">
                   <div class="caption center">
                     <h1 data-splitting="" class="header-logo-text">Experience safe collaborative networks
+<<<<<<< HEAD
                       <br> Safely Converge your data
                     </h1>
+=======
+                      <br> Safely Converge your data </h1>
+>>>>>>> e3240ea12f1ddcd2731454b08a2e90b1f0e2a6f1
                     <p>
 
                       Connect with ease. </p>
