@@ -1,199 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Family Tree CRUD</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!-- Include jQuery -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Include Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js"></script>
-  <!-- Include BALKAN FamilyTreeJS library -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/balkan-family-tree/dist/Balkan-Family-Tree.css"> -->
-  <script src="https://cdn.jsdelivr.net/gh/iamraghavan/Vanshavali@main/familytree.js"></script>
+
+  <style>
+    /*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.tree li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
+  </style>
+
 </head>
 <body>
-  <div class="container">
-    <h1>Family Tree CRUD</h1>
-    <div id="familyTree"></div>
-    <div id="formContainer" style="display: none;">
-      <h3>Add/Update Node</h3>
-      <form id="nodeForm">
-        <div class="form-group">
-          <label for="nodeId">Node ID:</label>
-          <input type="text" class="form-control" id="nodeId" readonly>
-        </div>
-        <div class="form-group">
-          <label for="nodeName">Node Name:</label>
-          <input type="text" class="form-control" id="nodeName">
-        </div>
-        <div class="form-group">
-          <label for="nodeParent">Parent ID:</label>
-          <input type="text" class="form-control" id="nodeParent" readonly>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-danger" id="deleteNodeBtn">Delete</button>
-        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
-      </form>
-    </div>
-  </div>
+  <!--
+We will create a family tree using just CSS(3)
+The markup will be simple nested lists
+-->
+<div class="tree">
+	<ul>
+		<li>
+			<a href="#">Parent</a>
+			<ul>
+				<li>
+					<a href="#">Child</a>
+					<ul>
+						<li>
+							<a href="#">Grand Child</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Child</a>
+					<ul>
+						<li><a href="#">Grand Child</a></li>
+						<li>
+							<a href="#">Grand Child</a>
+							<ul>
+								<li>
+									<a href="#">Great Grand Child</a>
+								</li>
+								<li>
+									<a href="#">Great Grand Child</a>
+								</li>
+								<li>
+									<a href="#">Great Grand Child</a>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#">Grand Child</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
-
-
-<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
-
-  <!-- Include your Firebase config and initialize the app -->
-  <script>
-    // Replace with your own Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyDVVWLah77CZOVjBqBweWbuPJpnhrHVg_Y",
-  authDomain: "portfolio-4bf1c.firebaseapp.com",
-  databaseURL: "https://portfolio-4bf1c-default-rtdb.firebaseio.com",
-  projectId: "portfolio-4bf1c",
-  storageBucket: "portfolio-4bf1c.appspot.com",
-  messagingSenderId: "296534124626",
-  appId: "1:296534124626:web:133b828c2ecffa7d4f978b",
-  measurementId: "G-EQ2J4C5ZGP"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  var auth = firebase.auth();
-
-    // Get a reference to the Firebase database
-    var database = firebase.database();
-  </script>
-
-  <!-- Include your custom JavaScript code -->
-  <script>
-    $(document).ready(function() {
-      var selectedNode = null;
-      var familyTree = null;
-      var familyData = {};
-
-      // Initialize the Family Tree
-      familyTree = new FamilyTree({
-        selector: '#familyTree',
-        firebase: {
-          database: database,
-          root: 'family'
-        },
-        // Add more configuration options here
-      });
-
-      // Enable node selection
-      familyTree.on('nodeSelected', function(node) {
-        selectedNode = node;
-        showForm();
-        fillForm(selectedNode);
-      });
-
-      // Enable form submission
-      $('#nodeForm').on('submit', function(e) {
-        e.preventDefault();
-        saveNode();
-      });
-
-      // Enable delete button
-      $('#deleteNodeBtn').on('click', function() {
-        deleteNode(selectedNode);
-      });
-
-      // Enable cancel button
-      $('#cancelBtn').on('click', function() {
-        clearForm();
-        hideForm();
-      });
-
-      // Function to show the form
-      function showForm() {
-        $('#formContainer').show();
-      }
-
-      // Function to hide the form
-      function hideForm() {
-        $('#formContainer').hide();
-      }
-
-      // Function to fill the form with node data
-      function fillForm(node) {
-        $('#nodeId').val(node.id);
-        $('#nodeName').val(node.name);
-        $('#nodeParent').val(node.parentId);
-      }
-
-      // Function to clear the form
-      function clearForm() {
-        $('#nodeId').val('');
-        $('#nodeName').val('');
-        $('#nodeParent').val('');
-      }
-
-      // Function to save/update a node
-      function saveNode() {
-        var nodeId = $('#nodeId').val();
-        var nodeName = $('#nodeName').val();
-        var nodeParent = $('#nodeParent').val();
-
-        if (nodeId) {
-          // Update existing node
-          familyData[nodeId].name = nodeName;
-        } else {
-          // Create new node
-          nodeId = Date.now().toString();
-          familyData[nodeId] = {
-            name: nodeName,
-            parent: nodeParent
-          };
-        }
-
-        // Save the family data to Firebase
-        database.ref('family').set(familyData)
-          .then(function() {
-            clearForm();
-            hideForm();
-          })
-          .catch(function(error) {
-            console.error('Error saving family data:', error);
-          });
-      }
-
-      // Function to delete a node
-      function deleteNode(node) {
-        if (node) {
-          delete familyData[node.id];
-
-          // Save the family data to Firebase
-          database.ref('family').set(familyData)
-            .then(function() {
-              clearForm();
-              hideForm();
-            })
-            .catch(function(error) {
-              console.error('Error saving family data:', error);
-            });
-        }
-      }
-
-      // Fetch family data from Firebase
-      database.ref('family').once('value')
-        .then(function(snapshot) {
-          familyData = snapshot.val();
-          familyTree.loadData(familyData);
-        })
-        .catch(function(error) {
-          console.error('Error fetching family data:', error);
-        });
-    });
-  </script>
+<script>
+  console.log('TreeStructure')
+</script>
 </body>
 </html>
