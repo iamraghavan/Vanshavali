@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Dashboard - Vanshavali</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/iamraghavan/Vanshavali@main/css/ishulove.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <link rel="stylesheet" href="./vendors/iconly/bold.css">
+
+    
+    <link rel="stylesheet" href="./css/forum-main.min.css">
+    <link rel="stylesheet" href="./css/forum-style.css">
+    <link rel="stylesheet" href="./css/forum-color.css">
+    <link rel="stylesheet" href="./css/forum-responsive.css">
+
+
+    <link rel="stylesheet" href="./vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+ 
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+    .header-logo-text {
+      font-family: 'Mouse Memoirs', sans-serif;
+      color: #FFF;
+    }
+  </style>
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <h3 class="header-logo-text">Vanshavali</h3>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+             
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+
+                        <li class="sidebar-item  ">
+                            <a href="./index.html" class='sidebar-link'>
+                                <i class="bi bi-person-circle"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                         <li class="sidebar-item  ">
+                            <a href="./forum.html" class='sidebar-link'>
+                                <i class="bi bi-chat-quote-fill"></i>
+                                <span>Foreroom</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="./family-tree.html" class='sidebar-link'>
+                                <i class="bi bi-option"></i>
+                                <span>Family Tree</span>
+                            </a>
+                        </li>
+ 
+                     
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main" class='layout-navbar'>
+            <header class='mb-3'>
+                <nav class="navbar navbar-expand navbar-light ">
+                    <div class="container-fluid">
+                        <a href="#" class="burger-btn d-block">
+                            <i class="bi bi-justify fs-3"></i>
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                
+                                <li class="nav-item dropdown me-3">
+                                    <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                        <li>
+                                            <h6 class="dropdown-header">Notifications</h6>
+                                        </li>
+                                        <li><a class="dropdown-item">No notification available</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="dropdown">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="user-menu d-flex">
+                                        <div class="user-name text-end me-3">
+                                            <h6 class="mb-0 text-gray-600">Administrator</h6>
+                                            <p class="mb-0 text-sm text-gray-600"><span id="user" class="message">Hello, <email-id></Email-id></span></p>
+                                        </div>
+                                        <div class="user-img d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="https://kurudhi.netlify.app/admin/images/man.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <h6 class="dropdown-header">Hello, Admin!</h6>
+                                    </li>
+
+                                    <!-- <li class="sidebar-item  ">
+                                        <a href="./index.html" class='sidebar-link'>
+                                            <i class="bi bi-chat-quote-fill"></i>
+                                            <span>Foreroom</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item  ">
+                                        <a href="./index.html" class='sidebar-link'>
+                                            <i class="bi bi-option"></i>
+                                            <span>Family Tree</span>
+                                        </a>
+                                    </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                                            Profile</a></li> -->
+                                    <li><a class="dropdown-item" href="#">
+                                        <i class="icon-mid bi bi-chat-quote-fill me-2"></i>
+                                        Foreroom
+                                    </a>
+                                </li>
+                                    <li><a class="dropdown-item" href="./family-tree.html"><i class="icon-mid bi bi-option me-2"></i>
+                                            Family Tree</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                            Settings</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
+                                            Wallet</a></li>
+                                    <li> -->
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li onclick="logout()"><a class="dropdown-item" href="#"><i
+                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="main-content">
+  
+                <div class="">
+                    <div class="collapse-tabs new-property-step">
+                        <div class="tab-content shadow-none p-0">
+                            <div class="page-content">
+                                <div class="main-wraper">
+									<!-- <span class="new-title">Create New Post</span> -->
+									<div class="new-post">
+										<form method="" enctype="application/x-www-form-urlencoded">
+											
+								
+
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-pen"></i></span>
+                                                <input type="text" class="form-control" placeholder="Create New Post" id="validationFeed" aria-describedby="inputGroupPrepend" required>
+                                              
+                                              </div>
+
+                                              <button style="margin:14px;" type="submit" class="main-btn"> <i class="bi bi-caret-right"></i> Post your Feed</button>
+                                            
+										</form>
+								
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-wraper">
+                    <div class="user-post">
+                        <div class="friend-info">
+                            <figure>
+                                <em>
+<svg style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="#7fba00" stroke="#7fba00" d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"></path></svg></em>
+                                <img alt="" src="images/resources/user7.jpg">
+                            </figure>
+                            <div class="friend-name">
+                                <div class="more">
+                                    <div class="more-post-optns">
+                                        <i class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></i>
+                                        <ul>
+                                            <li>
+                                                <i class="icofont-pen-alt-1"></i>Edit Post
+                                                <span>Edit This Post within a Hour</span>
+                                            </li>
+                                            <li>
+                                                <i class="icofont-ban"></i>Hide Post
+                                                <span>Hide This Post</span>
+                                            </li>
+                                            <li>
+                                                <i class="icofont-ui-delete"></i>Delete Post
+                                                <span>If inappropriate Post By Mistake</span>
+                                            </li>
+                                            <li>
+                                                <i class="icofont-flag"></i>Report
+                                                <span>Inappropriate content</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ins>
+                                    <a title="verified" href="time-line.html">Pradeep</a></ins>
+                                <span><i class="icofont-globe"></i> published: Sep,15 2020</span>
+                            </div>
+                            <div class="post-meta">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, deserunt dignissimos quo itaque, est ullam aliquid expedita et porro illo debitis quaerat voluptatem obcaecati officiis officia tempore accusamus molestiae repellat!
+                                </p>
+                               
+                            
+                                <div class="stat-tools">
+                                    <div class="box">
+                                      <div class="Like"><a class="Like__link"><i class="icofont-like"></i> Like</a>
+                                        <div class="Emojis">
+                                          <div class="Emoji Emoji--like">
+                                            <div class="icon icon--like"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--love">
+                                            <div class="icon icon--heart"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--haha">
+                                            <div class="icon icon--haha"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--wow">
+                                            <div class="icon icon--wow"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--sad">
+                                            <div class="icon icon--sad"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--angry">
+                                            <div class="icon icon--angry"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="Emojis">
+                                          <div class="Emoji Emoji--like">
+                                            <div class="icon icon--like"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--love">
+                                            <div class="icon icon--heart"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--haha">
+                                            <div class="icon icon--haha"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--wow">
+                                            <div class="icon icon--wow"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--sad">
+                                            <div class="icon icon--sad"></div>
+                                          </div>
+                                          <div class="Emoji Emoji--angry">
+                                            <div class="icon icon--angry"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a>
+                                    
+                                    <div class="emoji-state">
+                                        <div class="popover_wrapper">
+                                            <a class="popover_title" href="#" title=""><img alt="" src="images/smiles/thumb.png"></a>
+                                            <div class="popover_content">
+                                                <span><img alt="" src="images/smiles/thumb.png"> Likes</span>
+                                                <ul class="namelist">
+                                                    <li>Jhon Doe</li>
+                                                    <li>Amara Sin</li>
+                                                    <li>Sarah K.</li>
+                                                    <li><span>20+ more</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="popover_wrapper">
+                                            <a class="popover_title" href="#" title=""><img alt="" src="images/smiles/heart.png"></a>
+                                            <div class="popover_content">
+                                                <span><img alt="" src="images/smiles/heart.png"> Love</span>
+                                                <ul class="namelist">
+                                                    <li>Amara Sin</li>
+                                                    <li>Jhon Doe</li>
+                                                    <li><span>10+ more</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="popover_wrapper">
+                                            <a class="popover_title" href="#" title=""><img alt="" src="images/smiles/smile.png"></a>
+                                            <div class="popover_content">
+                                                <span><img alt="" src="images/smiles/smile.png"> Happy</span>
+                                                <ul class="namelist">
+                                                    <li>Sarah K.</li>
+                                                    <li>Jhon Doe</li>
+                                                    <li>Amara Sin</li>
+                                                    <li><span>100+ more</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="popover_wrapper">
+                                            <a class="popover_title" href="#" title=""><img alt="" src="images/smiles/weep.png"></a>
+                                            <div class="popover_content">
+                                                <span><img alt="" src="images/smiles/weep.png"> Dislike</span>
+                                                <ul class="namelist">
+                                                    <li>Danial Carbal</li>
+                                                    <li>Amara Sin</li>
+                                                    <li>Sarah K.</li>
+                                                    <li><span>15+ more</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>10+</p>
+                                    </div>
+                                    <div class="new-comment" style="display: none;">
+                                        <form method="post">
+                                            <input type="text" placeholder="write comment">
+                                            <button type="submit"><i class="icofont-paper-plane"></i></button>
+                                        </form>
+                                        <div class="comments-area">
+                                            <ul>
+                                                <li>
+                                                    <figure><img alt="" src="images/resources/user1.jpg"></figure>
+                                                    <div class="commenter">
+                                                        <h5><a title="" href="#">Jack Carter</a></h5>
+                                                        <span>2 hours ago</span>
+                                                        <p>
+                                                            i think that some how, we learn who we really are and then live with that decision, great post!
+                                                        </p>
+                                                        <span>you can view the more detail via link</span>
+                                                        <a title="" href="https://www.youtube.com/watch?v=HpZgwHU1GcI" target="_blank">https://www.youtube.com/watch?v=HpZgwHU1GcI</a>
+                                                    </div>
+                                                    <a title="Like" href="#"><i class="icofont-heart"></i></a>
+                                                    <a title="Reply" href="#" class="reply-coment"><i class="icofont-reply"></i></a>
+                                                </li>
+                                                <li>
+                                                    <figure><img alt="" src="images/resources/user2.jpg"></figure>
+                                                    <div class="commenter">
+                                                        <h5><a title="" href="#">Ching xang</a></h5>
+                                                        <span>2 hours ago</span>
+                                                        <p>
+                                                            i think that some how, we learn who we really are and then live with that decision, great post!
+                                                        </p>
+                                                    </div>
+                                                    <a title="Like" href="#"><i class="icofont-heart"></i></a>
+                                                    <a title="Reply" href="#" class="reply-coment"><i class="icofont-reply"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <div class="footer clearfix mb-0 text-muted">
+                        <div class="float-start">
+                            <p> <span id="current-year"></span> &copy; Vanshavali</p>
+                        </div>
+                        
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="./js/forum-main.min.js"></script>
+    <script src="./js/froum-script.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    
+    
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJg-eG7QH6yFZRlRA2hjMwiU1Sd8t6Puw",
+  authDomain: "kurudhiweb.firebaseapp.com",
+  databaseURL: "https://kurudhiweb-default-rtdb.firebaseio.com",
+  projectId: "kurudhiweb",
+  storageBucket: "kurudhiweb.appspot.com",
+  messagingSenderId: "993287986742",
+  appId: "1:993287986742:web:3f28546bc8f14e6d190297",
+  measurementId: "G-DVJ5PWQ84Z"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var auth = firebase.auth();
+
+  firebase.auth().onAuthStateChanged((user)=>{
+    if(!user){
+        location.replace("../index.html")
+    }else{
+        document.getElementById("user").innerHTML = "Hello, "+user.email    
+    }
+    
+})
+
+
+function logout(){
+    firebase.auth().signOut()
+}
+
+</script>
+
+
+     
+<script>
+    // Get the current year
+var currentYear = new Date().getFullYear();
+
+// Set the current year in the HTML element with the specified ID
+var currentYearElement = document.getElementById('current-year');
+currentYearElement.textContent = currentYear.toString();
+
+</script>
+
+<script type="text/javascript">
+    function DateSelectionChanged() {
+        var today = new Date();
+
+        var dob = new Date(document.getElementById('TextBox3').value);
+        var months = (today.getMonth() - dob.getMonth() + (12 * (today.getFullYear() - dob.getFullYear())));
+
+        let findDate =  Math.round(months / 12);
+        let donorName = document.getElementById('id1').value;
+        console.log(donorName);
+
+        if(findDate >= 18 && findDate < 55){
+            document.getElementById('TextBox4').value = ("AGE : " + "" + findDate);
+        }
+        else{
+            alert('Age Restricted' + ' ' + `Sorry! ${donorName} you are not allowed to vanshavali`
+                    );
+            
+        }
+        
+    }
+    
+    // var to = new Date();
+    // alert(to);
+
+    // Add event listener to the form
+document.getElementById('registrationform').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    var name = document.getElementById('id1').value;
+    // var email = document.getElementById('email').value;
+
+    // Move values to another JavaScript file
+    moveData(name, email);
+});
+
+</script>
+
+            
+
+
+
+</body>
+
+
+</html>
