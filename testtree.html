@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* Define the styles for the family tree container */
+#familyTree {
+  height: 500px;
+}
+
+</style>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+  <script src="./familytree.js"></script>
+</head>
+<body>
+  <div id="familyTree"></div>
+
+  <script>
+    // Initialize Firebase
+var firebaseConfig = {
+    apiKey: "AIzaSyAPOX2_fOrAYdyhwSy-Ofcrf7Y6kFyu71s",
+  authDomain: "intricate-aria-345510.firebaseapp.com",
+  databaseURL: "https://intricate-aria-345510-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "intricate-aria-345510",
+  storageBucket: "intricate-aria-345510.appspot.com",
+  messagingSenderId: "227588324050",
+  appId: "1:227588324050:web:5fb41aeddc8316f1268b0b",
+  measurementId: "G-Q5J0TN6C1C"
+};
+
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+// Create a new family tree instance
+var tree = new FamilyTree({
+  containerId: 'familyTree',
+  data: {},
+  enableEdit: true,
+  onPersonSave: savePersonToDatabase
+});
+
+// Fetch family tree data from the Firebase database
+database.ref('family').once('value', function(snapshot) {
+  var familyData = snapshot.val();
+  if (familyData) {
+    tree.setData(familyData);
+  }
+});
+
+// Function to save a person to the Firebase database
+function savePersonToDatabase(person) {
+  database.ref('family').set(tree.getData());
+}
+
+  </script>
+</body>
+</html>

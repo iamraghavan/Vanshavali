@@ -162,10 +162,11 @@
 <script>
     function validatePassword() {
         var password = document.getElementById("password").value;
+
         var confirmPassword = document.getElementById("confirmPassword").value;
-      
+
         var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-      
+        
         if (!passwordRegex.test(password)) {
           alert("Password must contain at least 8 characters, including at least one letter and one number.");
           return false;
